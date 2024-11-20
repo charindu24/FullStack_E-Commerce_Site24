@@ -2,6 +2,7 @@ import { redis } from "../lib/redis.js"; // Import Redis instance for token stor
 import User from "../models/user.model.js"; // Import User model for database operations
 import jwt from "jsonwebtoken"; // Import JSON Web Token for token generation and verification
 
+
 // Function to generate access and refresh tokens for a user
 const generateTokens = (userId) => {
     // Generate access token with 15 minutes expiration
