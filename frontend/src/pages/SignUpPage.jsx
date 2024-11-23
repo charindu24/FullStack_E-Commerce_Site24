@@ -12,7 +12,7 @@ const SignUpPage = () => {
 		confirmPassword: "",
 	});
 
-	const { signup, loading  } = useUserStore();
+	const { signup, loading } = useUserStore();
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
