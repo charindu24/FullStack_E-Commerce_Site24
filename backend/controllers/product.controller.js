@@ -42,31 +42,32 @@ export const getFeaturedProducts = async (req, res) => {
     res.status(500).json({ message: "Server error", error: error.message});
     
    } 
-}
+};
 
 export const createProduct = async (req, res) => {
-    try {
-        const{name, description, price, image, category} = req.body;
-        let cloudinaryResponse = null
-        if(image) {
-            await cloudinary.uploader.upload(image,{folder:"products"});
-        }
-        const product = await product.create({
-            name,
-            description,
-            price,
-            image: cloudinaryResponse?.secure_url ? cloudinaryResponse.secure_url : "",
-            category
-        })
+	try {
+		const { name, description, price, image, category } = req.body;
 
-        res.status(201).json(product)
-    } catch (error) {
-        console.log("Error in createProduct controller", error.message);
-        res.status(500).json({ message: "Server error", error: error.message});
+		let cloudinaryResponse = null;
 
-        
-    }
-}
+		if (image) {
+			cloudinaryResponse = await cloudinary.uploader.upload(image, { folder: "products" });
+		}
+
+		const product = await Product.create({
+			name,
+			description,
+			price,
+			image: cloudinaryResponse?.secure_url ? cloudinaryResponse.secure_url : "",
+			category,
+		});
+
+		res.status(201).json(product);
+	} catch (error) {
+		console.log("Error in createProduct controller", error.message);
+		res.status(500).json({ message: "Server error", error: error.message });
+	}
+};
 
 export const deleteProduct = async (req, res) => {
     try {
@@ -91,7 +92,7 @@ export const deleteProduct = async (req, res) => {
         console.log("Error in deleteProduct controller", error.message)
         res.status(500).json({ message: "Server error", error: error.message}); 
     }
-}
+};
 
 export const getRecommendedProducts = async (req, res) => {
     try {
@@ -116,7 +117,7 @@ export const getRecommendedProducts = async (req, res) => {
         res.status(500).json({ message: "Server error", error: error.message});
             
     }
-}
+};
 
 
 export const getProductsByCategory = async (req, res) => {
@@ -127,7 +128,7 @@ export const getProductsByCategory = async (req, res) => {
     } catch (error) {
         
     }
-}
+};
 
 
 export const toggleFeaturedProducts = async (req, res) => {
@@ -147,7 +148,7 @@ export const toggleFeaturedProducts = async (req, res) => {
         res.status(500).json({ message: "Server error", error: error.message});
         
     }
-}
+};
 
 async function updateFeaturedProductsCache() {
     
@@ -159,7 +160,7 @@ async function updateFeaturedProductsCache() {
         console.log("error in update cache function");
         
     }
-}
+};
 
 
 
