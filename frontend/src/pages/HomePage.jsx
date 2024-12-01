@@ -4,7 +4,7 @@ import CategoryItem from "../components/CategoryItem";
 
 const categories = [
   { href: "/jeans", name: "Jeans", imageUrl: "/jeans.jpg"},
-  { href: "/tshirts", name: "T-shirts", imageUrl: "/t-shirts.jpg"},
+  { href: "/t-shirts", name: "T-shirts", imageUrl: "/t-shirts.jpg"},
   { href: "/shoes", name: "Shoes", imageUrl: "/shoes.jpg"},
   { href: "/glasses", name: "Glasses", imageUrl: "/glasses.jpg"},
   { href: "/jackets", name: "Jackets", imageUrl: "/jackets.jpg"},
