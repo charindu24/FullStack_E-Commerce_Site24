@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useCartStore } from "../stores/useCartStore";
-import { div } from "framer-motion/client";
+
 
 
 
