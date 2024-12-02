@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import CartItem from "../components/CartItem";
 import PeopleAlsoBought from "../components/PeopleAlsoBought";
 import OrderSummary from "../components/OrderSummary";
+import GiftCouponCard from "../components/GiftCouponCard";
 
 
 const CartPage = () => {
@@ -39,7 +40,7 @@ const CartPage = () => {
                             transition={{ duration: 0.6, delay: 0.4 }}
                         >
                             <OrderSummary />
-                            {/*<GiftCouponCard />*/}
+                            <GiftCouponCard />
 
                         </motion.div>
 
