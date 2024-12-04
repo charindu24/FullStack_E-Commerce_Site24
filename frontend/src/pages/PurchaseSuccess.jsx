@@ -1,14 +1,65 @@
 import { ArrowRight, CheckCircle, HandHeart } from "lucide-react";
-
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useCartStore } from "../stores/useCartStore";
+import axios from '../lib/axios';
+import Confetti from "react-confetti";
+
+
+
 
 
 const PurchaseSuccess = () => {
+    const [isProcessing, setIsProcessing] = useState();
+    const{clearCart} = useCartStore();
+    const [error, setError ] = useState(null);
+
+
+    useEffect(() => {
+        const handleCheckoutSuccess = async (sessionId) => {
+            try {
+                await axios.post('/payments/checkout-success', {
+                    sessionId
+                })
+                clearCart()
+                
+            } catch (error) {
+                console.log(error);
+                
+            } finally {
+                setIsProcessing(false)
+                
+            }
+        }
+        const sessionId = new URLSearchParams(window.location.search).get('session_id');
+        if (sessionId) {
+            handleCheckoutSuccess(sessionId)
+
+        } else {
+            setIsProcessing(false)
+            setError("No session Id found in the URL");
+
+        }
+        
+    }, [clearCart]);
+    if(isProcessing) return "Processing...";
+    if(error) return `Error: ${error}`;
 
   return (
     <div className="h-screen flex items-center justify-center px-4">
 
-        {/* <confetti />*/}
+        <Confetti
+            width={
+                window.innerWidth
+            }
+            height={
+                window.innerHeight
+            }
+            gravity={0.1}
+            style={{zIndex:99}}
+            numberOfPieces={700}
+            recycle={false}
+        />
 
         <div className="max-w-md w-full bg-gray-800 rounded-lg shadow-xl overflow-hidden relative z-10">
             <div className="p-6 sm:p-8">
