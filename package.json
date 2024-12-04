@@ -20,14 +20,8 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon backend/server.js",
-    "start": "node backend/server.js",
-    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
-    "postinstall": "npm run build"
+    "start": "node backend/server.js"
   },
-  "engines": {
-    "node": ">=16.0.0"
-  },
-  "keywords": [],
   "author": "Charindu Bandaranayake",
   "license": "ISC"
 }
