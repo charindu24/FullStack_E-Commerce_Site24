@@ -1,7 +1,10 @@
 # E-commerce-Assignment
 
 Live Demo video Link - https://drive.google.com/file/d/1mgxBpPQEu-TyDDkadQID8eBzP0AWcnr_/view?usp=sharing
-How to setup Environment video link -
+How to setup Environment video link(Local running project) - https://drive.google.com/file/d/1GZ6KhITm3TFIY72Z7Eg_HvfMJuKvZ7D5/view?usp=sharing
+*Please see files
+
+files - https://drive.google.com/file/d/1RcHA2LXjSGVQrjgZyMQK4uxjkmxl82RM/view?usp=sharing
 
 
 
