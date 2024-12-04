@@ -42,3 +42,4 @@ dump/
 
 # Stripe Configurations
 # No specific files for Stripe, but environment files should handle API keys
+.vercel
