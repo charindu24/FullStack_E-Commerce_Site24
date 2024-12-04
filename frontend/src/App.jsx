@@ -15,6 +15,7 @@ import { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { useCartStore } from "./stores/useCartStore";
 import PurchaseSuccess from "./pages/PurchaseSuccess";
+import PurchaseCancel from "./pages/PurchaseCancel";
 
 
 
@@ -55,6 +56,7 @@ function App() {
       <Route path="/category/:category" element={ <CategoryPage />}/>
       <Route path="/cart" element={user ? <CartPage /> : <Navigate to='login' />}/>
       <Route path="/purchase-success" element={user ? <PurchaseSuccess /> : <Navigate to='login' />}/>
+      <Route path="/purchase-cancel" element={user ? <PurchaseCancel /> : <Navigate to='login' />}/>
     </Routes>
    </div>
    <Toaster />
